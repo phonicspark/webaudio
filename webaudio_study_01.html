@@ -29,7 +29,7 @@
       </header>
       <section>
         <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chapter 1. Hello Synth!</h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sine</h3>
   <button onclick="playsound()"> play </button>  
   <button onclick="stopsound()"> stop </button>  
 
@@ -65,6 +65,38 @@
     amp.disconnect();
   }
   </script>
+  
+        <section>
+        <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sqaure</h3>
+  <button onclick="playsound()"> play </button>  
+  <button onclick="stopsound()"> stop </button>  
+
+  <script>
+  var context = new AudioContext();
+  //create
+  var oscillator = context.createOscillator();
+  var filter = context.createBiquadFilter();
+  var amp = context.createGain();
+  //connect
+  oscillator.connect(filter);
+  filter.connect(amp);
+  //amp.connect(context.destination);
+  //control
+  oscillator.type = 'square';
+  oscillator.frequency.value = 480;
+  filter.frequency.value = 500;
+  filter.Q.value = 1;
+  amp.gain.value = 0.5;
+  oscillator.start(0);
+  function playsound() {
+    amp.connect(context.destination);
+  }
+  function stopsound() {
+    amp.disconnect();
+  }
+  </script>
+      </section>
       </section>
       <footer>
         <p><small>This project is maintained by <a href="https://github.com/phonicspark">phonicspark</a><small></p>
