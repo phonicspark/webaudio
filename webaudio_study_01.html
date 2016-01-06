@@ -29,41 +29,85 @@
       </header>
       <section>
         <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sine</h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sine</h3></br>
   <button onclick="playsound()"> play </button>  
   <button onclick="stopsound()"> stop </button>  
-
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sine</h3>
+  <button onclick="playsound2()"> play </button>  
+  <button onclick="stopsound2()"> stop </button>  
   <script>
 
-  var context = new AudioContext();
+  
+var context = new AudioContext();
 
-  //create
-  var oscillator = context.createOscillator();
-  var filter = context.createBiquadFilter();
-  var amp = context.createGain();
+// create
+var oscillator = context.createOscillator();
+var filter = context.createBiquadFilter();
+var amp = context.createGain();
 
-  //connect
-  oscillator.connect(filter);
-  filter.connect(amp);
-  //amp.connect(context.destination);
+// connect
+oscillator.connect(filter);
+filter.connect(amp);
+//amp.connect(context.destination);
 
-  //control
-  oscillator.type = 'sine';
-  oscillator.frequency.value = 440;
+// control
+oscillator.type = 'square'; 
+oscillator.frequency.value = 440; 
 
-  filter.frequency.value = 500;
-  filter.Q.value = 1;
+filter.frequency.value = 500;
+filter.Q.value = 1;
 
-  amp.gain.value = 0.5;
+amp.gain.value = 0.5;
 
-  oscillator.start(0);
+oscillator.start(0);
 
-  function playsound() {
-    amp.connect(context.destination);
-  }
-  function stopsound() {
-    amp.disconnect();
-  }
+function playsound()
+{
+  amp.connect(context.destination);
+}
+
+function stopsound()
+{
+  amp.disconnect();
+}
+
+/////////////////////////////////////////
+var context2 = new AudioContext();
+var x = 3600;
+// create
+var oscillator2 = context.createOscillator();
+var filter2 = context.createBiquadFilter();
+var amp2 = context.createGain();
+
+// connect
+oscillator2.connect(filter2);
+filter2.connect(amp2);
+//amp.connect(context.destination);
+
+// control
+oscillator2.type = 'sawtooth'; 
+oscillator2.frequency.value = 490; 
+
+filter2.frequency.value = x;
+filter2.Q.value = 1;
+
+
+amp2.gain.value = 0.3;
+
+oscillator2.start(0);
+
+function playsound2()
+{
+  amp2.connect(context.destination);
+}
+
+function stopsound2()
+{
+  amp2.disconnect();
+}
+
+
+
   </script>
   
 
