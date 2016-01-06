@@ -73,11 +73,11 @@
   <button onclick="stopsound()"> stop </button>  
 
   <script>
-  var context = new AudioContext();
+  var context2 = new AudioContext();
   //create
-  var oscillator2 = context.createOscillator();
-  var filter2 = context.createBiquadFilter();
-  var amp2 = context.createGain();
+  var oscillator2 = context2.createOscillator();
+  var filter2 = context2.createBiquadFilter();
+  var amp2 = context2.createGain();
   //connect
   oscillator2.connect(filter2);
   filter2.connect(amp2);
@@ -90,7 +90,7 @@
   amp2.gain.value = 0.5;
   oscillator2.start(0);
   function playsound() {
-    amp2.connect(context.destination);
+    amp2.connect(context2.destination);
   }
   function stopsound() {
     amp2.disconnect();
