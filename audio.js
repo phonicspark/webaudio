@@ -8,10 +8,10 @@ function loadSound(url) {
   request.open('GET', url, true);
   request.responseType = 'arraybuffer';
   request.onload = function() {
-    alert("sound loaded"); //test
+    //alert("sound loaded"); //test
     context.decodeAudioData(request.response, function(buffer) {
       myAudioBuffer = buffer;
-      alert("sound decoded"); //test
+      //alert("sound decoded"); //test
     });
   }
   request.send();
