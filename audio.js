@@ -1,7 +1,7 @@
 var context = new AudioContext;
 var myAudioBuffer = null;
 
-var url = "http://mac.kaist.ac.kr/~juhan/ctp431/webaudio/greg_baumont_-_Minimal_french_electro_loop.mp3";
+var url = "dog.mp3";
 
 function loadSound(url) {
   var request = new XMLHttpRequest();
