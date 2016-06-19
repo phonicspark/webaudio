@@ -49,4 +49,3 @@ function stopSound() {
     snare.stop();
     hihat.stop();
   }
-}
