@@ -48,6 +48,19 @@ function finishedLoading(bufferList) {
 
 
 function stopSound() {
+  var kick = context.createBufferSource();
+  var snare = context.createBufferSource();
+  var hihat = context.createBufferSource();
+  kick.loop = true;
+  snare.loop = true;
+  hihat.loop = true;
+  kick.buffer = bufferList[0];
+  snare.buffer = bufferList[1];
+  hihat.buffer = bufferList[2];
+
+  kick.connect(context.destination);
+  snare.connect(context.destination);
+  hihat.connect(context.destination);
     kick.stop(); // Stop source 1 immediately
     snare.stop(); // Stop source 2 immediately
     hihat.stop(); // Stop source 3 immediately
