@@ -1,6 +1,6 @@
 var context = new AudioContext;
 var myAudioBuffer = null;
-var labelAnnotations =  [
+/*var labelAnnotations =  [
                 {
                     "mid": "/m/068hy",
                     "description": "pet",
@@ -31,8 +31,13 @@ var labelAnnotations =  [
             labelAnnotations[2].description +
             + "<br/>" +
             labelAnnotations[3].description + ;
+*/
+var strJSON = '{"mid": "/m/068hy","description": "waterway","score": 0.98414}';
+var objJSON = eval("(function(){return " + strJSON + ";})()");
+console.log(objJSON.description + ".wav");
+console.log(objJSON.score * '100');
+var url = (objJSON.description + ".wav");
 
-var url = labelAnnotations[0].description+".mp3";
 
 function loadSound(url) {
   var request = new XMLHttpRequest();
