@@ -1,8 +1,6 @@
 /*new_audio_js*/
 
 var context;
-var source;
-
 var bufferLoader;
 
 function loadAndPlay() {
@@ -30,7 +28,6 @@ function loadAndPlay() {
 
 function finishedLoading(bufferList) {
     // Create three sources and buffers
-    var source = context.createBufferSource();
     var kick = context.createBufferSource();
     var snare = context.createBufferSource();
     var hihat = context.createBufferSource();
@@ -51,9 +48,8 @@ function finishedLoading(bufferList) {
 }
 
 
-function stop.onclick() {
-    source.stop(0); // Stop source 1 immediately
+function stopSound() {
     kick.stop(0); // Stop source 1 immediately
     snare.stop(0); // Stop source 2 immediately
     hihat.stop(0); // Stop source 3 immediately
-}
+  }
