@@ -46,7 +46,9 @@ function finishedLoading(bufferList) {
 
 var source = null;
 function stopSound() {
-  if (context) {
-    source.stop();
+  if (kick) {
+    kick.stop();
+    snare.stop();
+    hihat.stop();
   }
 }
