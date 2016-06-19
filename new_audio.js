@@ -48,7 +48,6 @@ function finishedLoading(bufferList) {
 
 
 function stopSound() {
-    bufferList[0].stop;
-    bufferList[1].stop;
-    bufferList[2].stop;
+    context.stop;
+    BufferLoader.stop;
   }
