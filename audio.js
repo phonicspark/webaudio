@@ -64,3 +64,4 @@ function stopSound() {
   if (source) {
     source.stop();
   }
+}
