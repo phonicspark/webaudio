@@ -44,8 +44,13 @@ function finishedLoading(bufferList) {
     hihat.start(0);
 }
 
-
+var kick = context.createBufferSource();
+var snare = context.createBufferSource();
+var hihat = context.createBufferSource();
 function stopSound() {
+  var kick = context.createBufferSource();
+  var snare = context.createBufferSource();
+  var hihat = context.createBufferSource();
   if (kick) {
     kick.stop(0); // Stop source 1 immediately
   }
