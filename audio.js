@@ -64,33 +64,3 @@ function stopSound() {
   if (source) {
     source.stop();
   }
-
-var url1 = "city.wav"
-}
-function loadSound(url1) {
-  var request = new XMLHttpRequest();
-  request.open('GET', url1, true);
-  request.responseType = 'arraybuffer1';
-  request.onload = function() {
-    //alert("sound loaded"); //test
-    context.decodeAudioData(request.response, function(buffer) {
-      myAudioBuffer1 = buffer;
-      //alert("sound decoded"); //test
-    });
-  }
-  request.send();
-}
-
-var source1 = null;
-function playSound(anybuffer1) {
-  source = context.createBufferSource();
-  source.buffer = anybuffer;
-  source.connect(context.destination);
-  source.start();
-}
-
-function stopSound() {
-  if (source) {
-    source.stop();
-  }
-}
