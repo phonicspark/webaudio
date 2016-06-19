@@ -1,38 +1,7 @@
 var context = new AudioContext;
 var myAudioBuffer = null;
-var labelAnnotations =  [
-                {
-                    "mid": "/m/068hy",
-                    "description": "pet",
-                    "score": 0.98414
-                },
-                {
-                    "mid": "/m/0bt9lr",
-                    "description": "dog",
-                    "score": 0.97904623
-                },
-                {
-                    "mid": "/m/04rky",
-                    "description": "mammal",
-                    "score": 0.96168429
-                },
-                {
-                    "mid": "/m/0jbk",
-                    "description": "animal",
-                    "score": 0.95276582
-                }
-            ];
 
-            document.getElementById("demo").innerHTML =
-            labelAnnotations[0].description +
-            + "<br/>" +
-            labelAnnotations[1].description +
-            + "<br/>" +
-            labelAnnotations[2].description +
-            + "<br/>" +
-            labelAnnotations[3].description + ;
-
-var url = labelAnnotations[0].description+".mp3";
+var url = "dog.mp3";
 
 function loadSound(url) {
   var request = new XMLHttpRequest();
