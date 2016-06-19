@@ -44,9 +44,15 @@ function finishedLoading(bufferList) {
     hihat.start(0);
 }
 
-var source = context.createBufferSource();
+
 function stopSound() {
-  if (source) {
-    source.stop();
+  if (kick) {
+    kick.stop(0); // Stop source 1 immediately
   }
+  if (snare) {
+    snare.stop(0); // Stop source 2 immediately
   }
+  if (hihat) {
+    hihat.stop(0); // Stop source 3 immediately
+  }
+}
