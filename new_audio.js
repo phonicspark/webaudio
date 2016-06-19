@@ -10,7 +10,6 @@ function loadAndPlay() {
     catch(e) {
         alert("Web Audio API is not supported in this browser");
     }
-
     bufferLoader = new BufferLoader(
         context,
         [
@@ -20,7 +19,6 @@ function loadAndPlay() {
         ],
         finishedLoading
     );
-
     bufferLoader.load();
 }
 
@@ -49,7 +47,7 @@ function finishedLoading(bufferList) {
 
 
 function stopSound() {
-    kick.stop(0); // Stop source 1 immediately
-    snare.stop(0); // Stop source 2 immediately
-    hihat.stop(0); // Stop source 3 immediately
+    kick.pause(0); // Stop source 1 immediately
+    snare.pause(0); // Stop source 2 immediately
+    hihat.pause(0); // Stop source 3 immediately
   }
