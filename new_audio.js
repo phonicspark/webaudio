@@ -46,7 +46,7 @@ function finishedLoading(bufferList) {
 
 var source = null;
 function stopSound() {
-  if (source) {
+  if (context) {
     source.stop();
   }
 }
