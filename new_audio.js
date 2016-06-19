@@ -1,4 +1,5 @@
 /*new_audio_js*/
+
 var context;
 var bufferLoader;
 
@@ -41,4 +42,11 @@ function finishedLoading(bufferList) {
     kick.start(0);
     snare.start(0);
     hihat.start(0);
+}
+
+var source = null;
+function stopSound() {
+  if (source) {
+    source.stop();
+  }
 }
