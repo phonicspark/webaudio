@@ -43,9 +43,8 @@ function finishedLoading(bufferList) {
     snare.start(0);
     hihat.start(0);
 }
+var ctx = context.createBufferSource();
+function stopSound(ctx) {
+    ctx.stop();
 
-function stopSound() {
-    kick.stop();
-    snare.stop();
-    hihat.stop();
   }
