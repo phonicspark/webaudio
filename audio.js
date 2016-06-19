@@ -32,7 +32,7 @@ var myAudioBuffer = null;
             + "<br/>" +
             labelAnnotations[3].description + ;
 */
-var strJSON = '{"mid": "/m/068hy","description": "pedestrian1","score": 0.98414}';
+var strJSON = '{"mid": "/m/068hy","description": "pedestrian2","score": 0.98414}';
 var objJSON = eval("(function(){return " + strJSON + ";})()");
 console.log(objJSON.description + ".wav");
 console.log(objJSON.score * '100');
