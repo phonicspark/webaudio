@@ -32,12 +32,11 @@ var myAudioBuffer = null;
             + "<br/>" +
             labelAnnotations[3].description + ;
 */
-var strJSON = '{"mid": "/m/068hy","description": "waterway","score": 0.98414}';
+var strJSON = '{"mid": "/m/068hy","description": "pedestrian1","score": 0.98414}';
 var objJSON = eval("(function(){return " + strJSON + ";})()");
 console.log(objJSON.description + ".wav");
 console.log(objJSON.score * '100');
-var url = (objJSON.description + ".wav");
-
+var url = ("sounds/" + objJSON.description + ".mp3");
 
 function loadSound(url) {
   var request = new XMLHttpRequest();
@@ -55,6 +54,35 @@ function loadSound(url) {
 
 var source = null;
 function playSound(anybuffer) {
+  source = context.createBufferSource();
+  source.buffer = anybuffer;
+  source.connect(context.destination);
+  source.start();
+}
+
+function stopSound() {
+  if (source) {
+    source.stop();
+  }
+
+var url1 = "city.wav"
+}
+function loadSound(url1) {
+  var request = new XMLHttpRequest();
+  request.open('GET', url1, true);
+  request.responseType = 'arraybuffer1';
+  request.onload = function() {
+    //alert("sound loaded"); //test
+    context.decodeAudioData(request.response, function(buffer) {
+      myAudioBuffer1 = buffer;
+      //alert("sound decoded"); //test
+    });
+  }
+  request.send();
+}
+
+var source1 = null;
+function playSound(anybuffer1) {
   source = context.createBufferSource();
   source.buffer = anybuffer;
   source.connect(context.destination);
