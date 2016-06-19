@@ -43,11 +43,14 @@ function finishedLoading(bufferList) {
     kick.start(0);
     snare.start(0);
     hihat.start(0);
+    kick.stop(); // Stop source 1 immediately
+    snare.stop(); // Stop source 2 immediately
+    hihat.stop();
 }
 
 
 function stopSound() {
-    kick.pause(0); // Stop source 1 immediately
-    snare.pause(0); // Stop source 2 immediately
-    hihat.pause(0); // Stop source 3 immediately
+    kick.stop(); // Stop source 1 immediately
+    snare.stop(); // Stop source 2 immediately
+    hihat.stop(); // Stop source 3 immediately
   }
