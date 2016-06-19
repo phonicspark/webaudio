@@ -45,9 +45,3 @@ function finishedLoading(bufferList) {
     hihat.start(0);
 
 }
-
-
-function stopSound() {
-    context.stop;
-    BufferLoader.stop;
-  }
