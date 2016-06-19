@@ -44,9 +44,7 @@ function finishedLoading(bufferList) {
     hihat.start(0);
 }
 
-var source = null;
 function stopSound() {
-  if (kick) {
     kick.stop();
     snare.stop();
     hihat.stop();
